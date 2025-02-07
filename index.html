@@ -1,1 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>BIG T DOMEENID</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300;400;700;800&display=swap"
+			rel="stylesheet"
+		/>
 
+		<style>
+			/* Body Styling */
+			body {
+				background-color: #0b0c10; /* Very Dark Gray/Black */
+				color: #c5c6c7; /* Light Gray */
+				font-family: "Inter", sans-serif;
+				height: 100vh;
+				margin: 0;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+			}
+
+			/* Header */
+			.header {
+				background-color: #1f2833; /* Dark Blue-Gray */
+				color: #66fcf1; /* Bright Cyan */
+				padding: 10px 20px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				font-size: 24px;
+				font-weight: bold;
+				font-family: "Parkinsans", sans-serif;
+			}
+
+			.top-nav {
+				display: flex;
+				justify-content: center;
+			}
+
+			.top-item {
+				font-size: 18px;
+				font-weight: 500;
+				padding: 8px 16px;
+				margin: 0 8px;
+				background-color: #45a29e; /* Medium Teal */
+				border: none;
+				border-radius: 5px;
+				color: #0b0c10; /* Very Dark Gray/Black */
+				cursor: pointer;
+				transition: background-color 0.3s ease, color 0.3s ease,
+					box-shadow 0.3s ease; /* Add transition for box-shadow */
+			}
+
+			.top-item:hover {
+				background-color: #66fcf1; /* Bright Cyan */
+				color: #1f2833; /* Dark Blue-Gray */
+				box-shadow: 0 0 10px #66fcf1; /* Add a glow effect on hover using box-shadow */
+			}
+
+			/* Main Content Container */
+			.main-container {
+				flex: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.white-container {
+				background-color: #1f2833; /* Dark Blue-Gray */
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Darker shadow */
+				width: 90%;
+				max-width: 800px;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				padding: 30px;
+				border-radius: 15px;
+			}
+
+			/* Text Styling */
+			.first-text {
+				font-weight: bold;
+				font-family: "Parkinsans", sans-serif;
+				text-align: center;
+				font-size: 75px;
+				color: #66fcf1; /* Bright Cyan */
+			}
+
+			.first2-text {
+				font-weight: bold;
+				font-family: "Parkinsans", sans-serif;
+				text-align: center;
+				font-size: 75px;
+				color: #66fcf1; /* Bright Cyan */
+			}
+
+			/* Input Container */
+			.input-container {
+				display: flex; /* Use flexbox for horizontal layout */
+				align-items: center; /* Vertically align items */
+				justify-content: center;
+				margin-top: 20px;
+			}
+
+			.httpstext {
+				font-weight: bold;
+				font-family: "Parkinsans", sans-serif;
+				font-size: 20px;
+				color: #c5c6c7; /* Light Gray */
+				margin-right: 10px; /* Add some spacing between the text and the input */
+			}
+
+			.input {
+				width: 40%; /* Adjust width as needed */
+				padding: 8px 12px;
+				box-sizing: border-box;
+				font-size: 16px;
+				background-color: #0b0c10; /* Very Dark Gray/Black */
+				border: 2px solid #45a29e; /* Medium Teal */
+				border-radius: 5px;
+				color: #c5c6c7;
+				transition: border-color 0.3s ease;
+				margin-right: 10px; /* Add some spacing between the input and the select */
+			}
+
+			.input:focus {
+				outline: none;
+				border-color: #66fcf1; /* Bright Cyan */
+			}
+
+			/* Select Dropdown */
+			.select {
+				padding: 8px 12px;
+				font-size: 16px;
+				background-color: #0b0c10; /* Very Dark Gray/Black */
+				border: 2px solid #45a29e; /* Medium Teal */
+				border-radius: 5px;
+				color: #ffffff; /* Light Gray */
+			}
+
+			/* Domain Rules Text */
+			.domain-rules {
+				font-size: 12px; /* Smaller text size */
+				color: #c5c6c7; /* Light Gray */
+				text-align: center; /* Center the text */
+				margin-top: 10px; /* Add some space above the text */
+				padding: 0 20px; /* Add padding to the left and right */
+			}
+
+			/* Button Styles */
+			.button {
+				font-weight: 510;
+				font-size: 20px;
+				border-radius: 10px;
+				font-family: "Parkinsans", sans-serif;
+				text-align: center;
+				align-self: center;
+				padding: 8px 20px;
+				background-color: #66fcf1; /* Bright Cyan */
+				color: #1f2833; /* Dark Blue-Gray */
+				margin-top: 20px;
+				border: none;
+				cursor: pointer;
+				transition: background-color 0.3s ease, color 0.3s ease,
+					box-shadow 0.3s ease; /* Add transition for box-shadow to button */
+			}
+
+			.button:hover {
+				background-color: #66fcf1; /* Medium Teal */
+				color: #0b0c10; /* Very Dark Gray/Black */
+				box-shadow: 0 0 30px #66fcf1; /* Add a glow effect on hover using box-shadow */
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="logo">BIG T DOMEENID.ee</div>
+			<div class="top-nav">
+				<button class="top-item">Domeenid</button>
+				<button class="top-item">Koduleht</button>
+				<button class="top-item">E-post</button>
+				<button class="top-item">Hinnad</button>
+			</div>
+		</div>
+
+		<div class="main-container">
+			<div class="white-container">
+				<h1 class="first-text">BIG T</h1>
+				<h1 class="first2-text">DOMEENID</h1>
+				<div class="input-container">
+					<h1 class="httpstext">https://</h1>
+					<input class="input" placeholder="Sisesta soovitud domeen" />
+					<select class="select">
+						<option>SELECT</option>
+						<option>.ee</option>
+						<option>.com</option>
+						<option>.org</option>
+					</select>
+				</div>
+				<p class="domain-rules">
+					Domeeninimi peab olema 1–63 märki pikk, sisaldama ainult tähti (a–z,
+					ä, ö, ü, õ, š, ž), numbreid (0–9) ja sidekriipsu (mitte alguses ega
+					lõpus). Nimi peab olema unikaalne, mitte rikkuma kaubamärgiõigusi ega
+					olema vastuolus heade tavadega.
+				</p>
+				<button class="button">Kontrolli</button>
+			</div>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
