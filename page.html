@@ -240,6 +240,15 @@
             padding: 10px;
             margin-bottom: 10px;
         }
+
+		#domainModalj {
+            display: none;
+            background-color: #5eff00d2;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -263,6 +272,9 @@
 
             <div id="domainModal">
                 Domeen ei ole saadaval!
+            </div>
+			<div id="domainModalj">
+                Domeen on saadaval!
             </div>
 
             <div class="input-container">
@@ -291,17 +303,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+</body>
     <script>
         // Function to show the modal
-        function showModal() {
-            document.getElementById('domainModal').style.display = "block";
-        }
+// Function to show the modal
+function showModal() {
+    // Generate a random number (either 1 or 2)
+    var randomNumber = Math.floor(Math.random() * 2) + 1;  // Random number 1 or 2
 
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById('domainModal').style.display = "none";
-        }
+    // Hide both modals initially
+    document.getElementById('domainModal').style.display = "none";
+    document.getElementById('domainModalj').style.display = "none";
+
+    // Show the selected modal based on the random number
+    if (randomNumber === 1) {
+        document.getElementById('domainModal').style.display = "block";
+    } else {
+        document.getElementById('domainModalj').style.display = "block";
+    }
+}
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById('domainModal').style.display = "none";
+    document.getElementById('domainModalj').style.display = "none";
+}
+
     </script>
-</body>
-
 </html>
