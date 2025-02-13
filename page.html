@@ -13,13 +13,17 @@
 
     <style>
         body {
-            background-color: #0b0c10;
-            color: #c5c6c7;
-            font-family: "Inter", sans-serif;
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
+			background-color: #0b0c10;
+background-image: url('background1.jpg'); /* Use the appropriate path if it's located in a specific folder */
+background-size: cover; /* Ensures the image covers the entire background */
+background-position: center; /* Centers the image */
+color: #c5c6c7;
+font-family: "Inter", sans-serif;
+min-height: 100vh;
+margin: 0;
+display: flex;
+flex-direction: column;
+
         }
 
         .header {
@@ -260,6 +264,8 @@
                     <option value="2">2 aastat</option>
                     <option value="3">3 aastat</option>
                     <option value="5">5 aastat</option>
+					<option value="8">8 aastat</option>
+					<option value="10">10 aastat</option>
                 </select>
             </div>
 
@@ -304,16 +310,22 @@
 						price = 10;
 						break;
 					case '2':
-						price = 18;
+						price = 19;
 						break;
 					case '3':
-						price = 24;
+						price = 27;
 						break;
 					case '5':
-						price = 40;
+						price = 41;
+						break;
+						case '8':
+						price = 61;
+						break;
+						case '10':
+						price = 75;
 						break;
 					default:
-						price = 0;
+						price = '__';
 				}
 		
 				document.getElementById('domainPrice').textContent = `${price} € + km`;
