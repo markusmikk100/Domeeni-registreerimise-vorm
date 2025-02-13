@@ -229,40 +229,44 @@
             <div class="domain-rules">
                 Domeeninimi peab olema 1–63 märki pikk, sisaldama ainult tähti (a–z, ä, ö, ü, õ, š, ž), numbreid (0–9) ja sidekriipsu (mitte alguses ega lõpus). Nimi peab olema unikaalne, mitte rikkuma kaubamärgiõigusi ega olema vastuolus heade tavadega.
             </div>
-			
+            
             <div class="input-container">
-				<h1 class="httpstext">https://</h1>
+                <h1 class="httpstext">https://</h1>
                 <input type="text" class="input" id="domainName" placeholder="Sisesta soovitud domeen" />
                 <select class="select" id="domainExtension">
-					<option value="">SELECT</option>
+                    <option value="">SELECT</option>
                     <option value=".ee">.ee</option>
                     <option value=".com">.com</option>
                     <option value=".org">.org</option>
                 </select>
             </div>
-			
+            
             <div class="button-container">
-				<button type="button" class="button" onclick="showModal()">
-					Kontrolli
-                </button>
+                <button type="button" class="button" onclick="showModal()">Kontrolli</button>
             </div>
-			
-			<div id="domainModal">
-				Domeen ei ole saadaval!
-			</div>
-			<div id="domainModalj">
-				Domeen on saadaval!
-			</div>
-			
+            
+            <div id="domainModal">
+                Domeen ei ole saadaval!
+            </div>
+            <div id="domainModalj">
+                Domeen on saadaval!
+            </div>
+            
             <div id="durationContainer" class="duration-container">
                 <span id="domainPrice">0.00 € + km</span>
                 <select id="durationSelect" class="select">
+                    <option value="Vali Periood">Vali Periood</option>
                     <option value="1">1 aasta</option>
                     <option value="2">2 aastat</option>
                     <option value="3">3 aastat</option>
                     <option value="5">5 aastat</option>
                 </select>
             </div>
+
+			<div class="button-container">
+				<button type="button" class="button" id="nextButton" style="display: none;">Edasi andmeid sisestama ></button>
+			</div>
+			
         </div>
     </div>
 
@@ -276,6 +280,9 @@
 		
 				document.getElementById('domainModal').style.display = "none";
 				document.getElementById('domainModalj').style.display = "none";
+				document.getElementById('durationContainer').style.display = "none";
+				document.getElementById('nextButton').style.display = "none"; // Hide the button initially
+		
 				updatePrice();
 		
 				if (randomNumber === 1) {
@@ -283,6 +290,7 @@
 				} else {
 					document.getElementById('domainModalj').style.display = "block";
 					document.getElementById('durationContainer').style.display = "block";
+					document.getElementById('nextButton').style.display = "block"; // Show the button when domain is available
 					updatePrice();
 				}
 			}
@@ -312,7 +320,7 @@
 			}
 		
 			document.getElementById('durationSelect').addEventListener('change', updatePrice);
-		</script>
+		</script>		
 </body>
 
 </html>
