@@ -13,16 +13,20 @@
 
     <style>
         body {
-			background-color: #0b0c10;
-background-image: url('background1.jpg'); /* Use the appropriate path if it's located in a specific folder */
-background-size: cover; /* Ensures the image covers the entire background */
-background-position: center; /* Centers the image */
-color: #c5c6c7;
-font-family: "Inter", sans-serif;
-min-height: 100vh;
-margin: 0;
-display: flex;
-flex-direction: column;
+            background-color: #0b0c10;
+            background-image: url('background1.jpg');
+            /* Use the appropriate path if it's located in a specific folder */
+            background-size: cover;
+            /* Ensures the image covers the entire background */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            color: #c5c6c7;
+            font-family: "Inter", sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
 
         }
 
@@ -83,6 +87,17 @@ flex-direction: column;
             max-width: 50rem;
             padding: 1.875rem;
             border-radius: 0.9375rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .white-container.available {
+            box-shadow: 0 0 1.25rem 1rem #5eff00b0;
+            /* Green glow */
+        }
+
+        .white-container.unavailable {
+            box-shadow: 0 0 1.25rem 1rem #ff0000a8;
+            /* Red glow */
         }
 
         .first-text,
@@ -128,7 +143,7 @@ flex-direction: column;
 
         .input:focus {
             outline: none;
-            border-color: #66fcf1;
+            border-color: #4eaae7;
         }
 
         .select {
@@ -180,13 +195,13 @@ flex-direction: column;
             font-size: 1rem;
         }
 
-        #domainModal, #domainModalj {
+        #domainModal,
+        #domainModalj {
             display: none;
             color: white;
             text-align: center;
             padding: 10px;
             margin-top: 10px;
-            border-radius: 5px;
         }
 
         #domainModal {
@@ -209,6 +224,14 @@ flex-direction: column;
             color: #c5c6c7;
             margin-right: 1rem;
         }
+
+        #nextButton {
+            text-decoration: none;
+        }
+
+        .no-underline {
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -226,14 +249,16 @@ flex-direction: column;
     </div>
 
     <div class="main-container">
-        <div class="white-container">
+        <div class="white-container" id="whiteContainer">
             <h1 class="first-text">BIG T</h1>
             <h1 class="first2-text">DOMEENID</h1>
 
             <div class="domain-rules">
-                Domeeninimi peab olema 1–63 märki pikk, sisaldama ainult tähti (a–z, ä, ö, ü, õ, š, ž), numbreid (0–9) ja sidekriipsu (mitte alguses ega lõpus). Nimi peab olema unikaalne, mitte rikkuma kaubamärgiõigusi ega olema vastuolus heade tavadega.
+                Domeeninimi peab olema 1–63 märki pikk, sisaldama ainult tähti (a–z, ä, ö, ü, õ, š, ž), numbreid
+                (0–9) ja sidekriipsu (mitte alguses ega lõpus). Nimi peab olema unikaalne, mitte rikkuma
+                kaubamärgiõigusi ega olema vastuolus heade tavadega.
             </div>
-            
+
             <div class="input-container">
                 <h1 class="httpstext">https://</h1>
                 <input type="text" class="input" id="domainName" placeholder="Sisesta soovitud domeen" />
@@ -244,18 +269,18 @@ flex-direction: column;
                     <option value=".org">.org</option>
                 </select>
             </div>
-            
+
             <div class="button-container">
                 <button type="button" class="button" onclick="showModal()">Kontrolli</button>
             </div>
-            
+
             <div id="domainModal">
                 Domeen ei ole saadaval!
             </div>
             <div id="domainModalj">
                 Domeen on saadaval!
             </div>
-            
+
             <div id="durationContainer" class="duration-container">
                 <span id="domainPrice">0.00 € + km</span>
                 <select id="durationSelect" class="select">
@@ -264,15 +289,16 @@ flex-direction: column;
                     <option value="2">2 aastat</option>
                     <option value="3">3 aastat</option>
                     <option value="5">5 aastat</option>
-					<option value="8">8 aastat</option>
-					<option value="10">10 aastat</option>
+                    <option value="8">8 aastat</option>
+                    <option value="10">10 aastat</option>
                 </select>
             </div>
+            <div class="button-container">
+                <a href="page2.html" class="no-underline">
+                    <button type="button" class="button" id="nextButton" style="display: none;">Edasi andmeid sisestama ></button>
+                </a>
+            </div>
 
-			<div class="button-container">
-				<button type="button" class="button" id="nextButton" style="display: none;">Edasi andmeid sisestama ></button>
-			</div>
-			
         </div>
     </div>
 
@@ -280,59 +306,65 @@ flex-direction: column;
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-		<script>
-			function showModal() {
-				var randomNumber = Math.floor(Math.random() * 2) + 1;
-		
-				document.getElementById('domainModal').style.display = "none";
-				document.getElementById('domainModalj').style.display = "none";
-				document.getElementById('durationContainer').style.display = "none";
-				document.getElementById('nextButton').style.display = "none"; // Hide the button initially
-		
-				updatePrice();
-		
-				if (randomNumber === 1) {
-					document.getElementById('domainModal').style.display = "block";
-				} else {
-					document.getElementById('domainModalj').style.display = "block";
-					document.getElementById('durationContainer').style.display = "block";
-					document.getElementById('nextButton').style.display = "block"; // Show the button when domain is available
-					updatePrice();
-				}
-			}
-		
-			function updatePrice() {
-				const duration = document.getElementById('durationSelect').value;
-				let price = 0;
-		
-				switch (duration) {
-					case '1':
-						price = 10;
-						break;
-					case '2':
-						price = 19;
-						break;
-					case '3':
-						price = 27;
-						break;
-					case '5':
-						price = 41;
-						break;
-						case '8':
-						price = 61;
-						break;
-						case '10':
-						price = 75;
-						break;
-					default:
-						price = '__';
-				}
-		
-				document.getElementById('domainPrice').textContent = `${price} € + km`;
-			}
-		
-			document.getElementById('durationSelect').addEventListener('change', updatePrice);
-		</script>		
+    <script>
+        function showModal() {
+            var randomNumber = Math.floor(Math.random() * 2) + 1;
+            var whiteContainer = document.getElementById('whiteContainer');
+
+            // Remove existing glow classes
+            whiteContainer.classList.remove('available', 'unavailable');
+
+            document.getElementById('domainModal').style.display = "none";
+            document.getElementById('domainModalj').style.display = "none";
+            document.getElementById('durationContainer').style.display = "none";
+            document.getElementById('nextButton').style.display = "none"; // Hide the button initially
+
+            updatePrice();
+
+            if (randomNumber === 1) {
+                document.getElementById('domainModal').style.display = "block";
+                whiteContainer.classList.add('unavailable'); // Add red glow
+            } else {
+                document.getElementById('domainModalj').style.display = "block";
+                whiteContainer.classList.add('available'); // Add green glow
+                document.getElementById('durationContainer').style.display = "block";
+                document.getElementById('nextButton').style.display = "block"; // Show the button when domain is available
+                updatePrice();
+            }
+        }
+
+        function updatePrice() {
+            const duration = document.getElementById('durationSelect').value;
+            let price = 0;
+
+            switch (duration) {
+                case '1':
+                    price = 10;
+                    break;
+                case '2':
+                    price = 19;
+                    break;
+                case '3':
+                    price = 27;
+                    break;
+                case '5':
+                    price = 41;
+                    break;
+                case '8':
+                    price = 61;
+                    break;
+                case '10':
+                    price = 75;
+                    break;
+                default:
+                    price = '__';
+            }
+
+            document.getElementById('domainPrice').textContent = `${price} € + km`;
+        }
+
+        document.getElementById('durationSelect').addEventListener('change', updatePrice);
+    </script>
 </body>
 
 </html>
