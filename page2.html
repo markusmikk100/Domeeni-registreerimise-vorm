@@ -110,7 +110,6 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            /* Align items to the start (left) */
             margin-top: 1.25rem;
             width: 100%;
         }
@@ -139,7 +138,7 @@
 
         .input:focus {
             outline: none;
-            border-color: #4eaae7;
+            border-color: #66fcf1;
         }
 
         .select {
@@ -174,10 +173,17 @@
             box-shadow: 0 0 1.875rem #66fcf1;
         }
 
+        .button:disabled {
+            background-color: #44918e;
+            color: #6b7c8a;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 1rem; /* Add some space between buttons */
+            gap: 1rem;
         }
 
         .additional-content {
@@ -225,7 +231,6 @@
 
         #paymentForm {
             display: none;
-            
         }
 
         #paymentForm h3 {
@@ -235,6 +240,18 @@
             font-weight: bold;
             color: #ffffff;
             text-align: left;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 0.625rem;
+        }
+
+        .payment-icons img {
+            width: 3rem;
+            margin-right: 0.5rem;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -261,62 +278,63 @@
             <div class="duration-container">
             </div>
 
-            <div class="input-container-vertical">
-                <label for="firstName">Eesnimi:</label>
-                <input type="text" id="firstName" class="input" placeholder="Eesnimi" />
-            </div>
-
-            <div class="input-container-vertical">
-                <label for="lastName">Perekonna nimi:</label>
-                <input type="text" id="lastName" class="input" placeholder="Perekonna nimi" />
-            </div>
-
-            <div class="input-container-vertical">
-                <label for="email">E-post:</label>
-                <input type="email" id="email" class="input" placeholder="your@email.com" />
-            </div>
-
-            <div class="input-container-vertical">
-                <label for="phoneNumber">Telefoninumber:</label>
-                <input type="tel" id="phoneNumber" class="input" placeholder="+372 555 5555" />
-            </div>
-
-            <div class="input-container-vertical">
-                <label for="address">Aadress:</label>
-                <input type="text" id="address" class="input" placeholder="Teie tänav, linn, riik" />
-            </div>
-
-            <div class="input-container-vertical">
-                <label for="paymentMethod">Makseviis:</label>
-                <select id="paymentMethod" class="select">
-                    <option value="">Vali makseviis</option>
-                    <option value="creditCard">Krediitkaart</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="bankTransfer">Pangaülekanne</option>
-                </select>
-            </div>
-
-            <div id="paymentForm">
-                <!-- Placeholder for payment details form -->
-                <h3>Sisesta makse andmed:</h3>
+            <form id="domainForm">
                 <div class="input-container-vertical">
-                    <label for="cardNumber">Kaardi number:</label>
-                    <input type="text" id="cardNumber" class="input" placeholder="xxxx-xxxx-xxxx-xxxx" />
+                    <label for="firstName">Eesnimi:</label>
+                    <input type="text" id="firstName" class="input" placeholder="Eesnimi" required />
                 </div>
-                <div class="input-container-vertical">
-                    <label for="expiryDate">Aegumiskuupäev (MM/YY):</label>
-                    <input type="text" id="expiryDate" class="input" placeholder="MM/YY" />
-                </div>
-                <div class="input-container-vertical">
-                    <label for="cvv">CVV:</label>
-                    <input type="text" id="cvv" class="input" placeholder="123" />
-                </div>
-            </div>
 
-            <div class="button-container">
-                <button class="button" onclick="window.location.href='page1.html'">Tagasi</button>
-                <button class="button" id="buyDomain">Osta Domeen</button>
-            </div>
+                <div class="input-container-vertical">
+                    <label for="lastName">Perekonna nimi:</label>
+                    <input type="text" id="lastName" class="input" placeholder="Perekonna nimi" required />
+                </div>
+
+                <div class="input-container-vertical">
+                    <label for="email">E-post:</label>
+                    <input type="email" id="email" class="input" placeholder="your@email.com" required />
+                </div>
+
+                <div class="input-container-vertical">
+                    <label for="phoneNumber">Telefoninumber:</label>
+                    <input type="tel" id="phoneNumber" class="input" placeholder="+372 555 5555" required />
+                </div>
+
+                <div class="input-container-vertical">
+                    <label for="address">Aadress:</label>
+                    <input type="text" id="address" class="input" placeholder="Teie tänav, linn, riik" required />
+                </div>
+
+                <div class="input-container-vertical">
+                    <label for="paymentMethod">Makseviis:</label>
+                    <select id="paymentMethod" class="select" required>
+                        <option value="">Vali makseviis</option>
+                        <option value="creditCard">Krediitkaart</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bankTransfer">Pangaülekanne</option>
+                    </select>
+                </div>
+
+                <div id="paymentForm">
+                    <h3>Sisesta makse andmed:</h3>
+                    <div class="input-container-vertical">
+                        <label for="cardNumber">Kaardi number:</label>
+                        <input type="text" id="cardNumber" class="input" placeholder="xxxx-xxxx-xxxx-xxxx" />
+                    </div>
+                    <div class="input-container-vertical">
+                        <label for="expiryDate">Aegumiskuupäev (MM/YY):</label>
+                        <input type="text" id="expiryDate" class="input" placeholder="MM/YY" />
+                    </div>
+                    <div class="input-container-vertical">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" class="input" placeholder="123" />
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="button" onclick="window.location.href='page1.html'">Tagasi</button>
+                    <button class="button" id="buyDomain" type="submit" disabled>Osta Domeen</button>
+                </div>
+            </form>
 
         </div>
     </div>
@@ -329,15 +347,59 @@
         document.addEventListener("DOMContentLoaded", function () {
             const paymentMethodSelect = document.getElementById("paymentMethod");
             const paymentForm = document.getElementById("paymentForm");
+            const buyDomainButton = document.getElementById("buyDomain");
+            const cardNumberField = document.getElementById("cardNumber");
+            const expiryDateField = document.getElementById("expiryDate");
+            const cvvField = document.getElementById("cvv");
+            const domainForm = document.getElementById("domainForm");
 
-            paymentMethodSelect.addEventListener("change", function () {
+            function checkFields() {
+                let allBaseFieldsFilled = true;
+                let allCreditCardFieldsFilled = true;
+
+                // Check base required fields
+                const requiredBaseFields = domainForm.querySelectorAll('input[required]:not([form="creditCardForm"]), select[required]');
+                requiredBaseFields.forEach(field => {
+                    if (!field.value) {
+                        allBaseFieldsFilled = false;
+                    }
+                });
+
+                //Check credit card fields if needed
+                if (paymentMethodSelect.value === "creditCard") {
+                    if (!cardNumberField.value || !expiryDateField.value || !cvvField.value) {
+                        allCreditCardFieldsFilled = false;
+                    }
+                }
+
+                buyDomainButton.disabled = !(allBaseFieldsFilled && (paymentMethodSelect.value !== "creditCard" || allCreditCardFieldsFilled));
+            }
+
+
+            function togglePaymentForm() {
                 if (paymentMethodSelect.value === "creditCard") {
                     paymentForm.style.display = "block";
+                    cardNumberField.required = true;
+                    expiryDateField.required = true;
+                    cvvField.required = true;
                 } else {
                     paymentForm.style.display = "none";
+                    cardNumberField.required = false;
+                    expiryDateField.required = false;
+                    cvvField.required = false;
                 }
-            });
+                checkFields();
+            }
+
+
+            domainForm.addEventListener('input', checkFields);
+            domainForm.addEventListener('change', checkFields);
+            paymentMethodSelect.addEventListener("change", togglePaymentForm);
+
+            togglePaymentForm();
+            checkFields();
         });
     </script>
 </body>
+
 </html>
