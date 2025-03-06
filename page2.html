@@ -335,7 +335,6 @@
                     <button class="button" id="buyDomain" type="submit" disabled>Osta Domeen</button>
                 </div>
             </form>
-
         </div>
     </div>
 
@@ -375,7 +374,6 @@
                 buyDomainButton.disabled = !(allBaseFieldsFilled && (paymentMethodSelect.value !== "creditCard" || allCreditCardFieldsFilled));
             }
 
-
             function togglePaymentForm() {
                 if (paymentMethodSelect.value === "creditCard") {
                     paymentForm.style.display = "block";
@@ -391,10 +389,18 @@
                 checkFields();
             }
 
-
             domainForm.addEventListener('input', checkFields);
             domainForm.addEventListener('change', checkFields);
             paymentMethodSelect.addEventListener("change", togglePaymentForm);
+
+            // Submit form and redirect to page3.html on success
+            domainForm.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent the default form submission
+                // Check if the form is valid
+                if (buyDomainButton.disabled === false) {
+                    window.location.href = "page3.html"; // Redirect to page3.html
+                }
+            });
 
             togglePaymentForm();
             checkFields();
