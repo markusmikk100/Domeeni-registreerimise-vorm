@@ -1,0 +1,292 @@
+body {
+    background-color: #0b0c10;
+    background-image: url("background1.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #1f2833;
+    color: #66fcf1;
+    padding: 1rem;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Parkinsans", sans-serif;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.top-item {
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    background-color: #45a29e;
+    border: none;
+    border-radius: 0.3125rem;
+    color: #0b0c10;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.top-item:hover {
+    background-color: #66fcf1;
+    color: #1f2833;
+    box-shadow: 0 0 0.625rem #66fcf1;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.white-container {
+    background-color: #1f2833;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Soften the shadow */
+    width: 90%;
+    max-width: 50rem;
+    padding: 2.5rem; /* Add more padding */
+    border-radius: 0.9375rem;
+    transition: box-shadow 0.3s ease;
+    position: relative; /* Add this */
+  }
+
+.white-container.available {
+    box-shadow: 0 0 1.25rem 1rem #5eff00b0;
+    /* Green glow */
+}
+
+.white-container.unavailable {
+    box-shadow: 0 0 1.25rem 1rem #ff0000a8;
+    /* Red glow */
+}
+
+.first-text,
+.first2-text {
+    font-weight: bold;
+    font-family: "Parkinsans", sans-serif;
+    text-align: center;
+    font-size: 4.6875rem;
+    color: #66fcf1;
+    margin-bottom: 0.5rem;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.25rem;
+}
+
+.httpstext {
+    font-weight: bold;
+    font-family: "Parkinsans", sans-serif;
+    font-size: 1.25rem;
+    color: #c5c6c7;
+    margin-right: 0.625rem;
+}
+
+.input,
+.select {
+  padding: 0.75rem 1rem; /* Adjust padding for a larger feel */
+  font-size: 1rem;
+  background-color: #0b0c10;
+  border: 0.125rem solid #45a29e;
+  border-radius: 0.5rem; /* Round the corners more */
+  color: #ffffff;
+  transition: border-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.input {
+    width: 40%;
+    margin-right: 0.625rem;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #66fcf1;
+}
+
+.select {
+    color: #fff;
+}
+
+.domain-rules {
+    font-size: 0.75rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    padding: 0 1.25rem;
+}
+
+.button {
+    font-weight: 510;
+    font-size: 1.25rem;
+    border-radius: 0.625rem;
+    font-family: "Parkinsans", sans-serif;
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+    background-color: #66fcf1;
+    color: #1f2833;
+    margin-top: 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    color: #0b0c10;
+    box-shadow: 0 0 1rem #66fcf1; /* Soften the glow */
+  }
+
+.button:disabled {
+    background-color: #44918e;
+    color: #6b7c8a;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.additional-content {
+    background-color: #1f2833;
+    padding: 1.875rem;
+    border-radius: 0.9375rem;
+    margin-top: 1.25rem;
+    text-align: center;
+}
+
+.additional-content p {
+    font-size: 1rem;
+}
+
+#domainModal,
+#domainModalj {
+    display: none;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#domainModal {
+    background-color: #ff0000d2;
+}
+
+#domainModalj {
+    background-color: #5eff00d2;
+}
+
+.duration-container {
+    margin-top: 1.25rem;
+    text-align: center;
+    display: none;
+}
+
+.duration-container select,
+.duration-container span {
+    font-size: 1.125rem;
+    color: #ffffff;
+    margin-right: 1rem;
+}
+
+#paymentForm {
+  display: none;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #45a29e;
+  border-radius: 0.5rem;
+}
+
+#paymentForm h3 {
+    margin-top: 50px;
+    font-size: 2rem;
+    font-family: "Parkinsans", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0.625rem;
+}
+
+.payment-icons img {
+    width: 3rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.no-underline {
+    text-decoration: none;
+  }
+
+  .shopping-list-container {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    background-color: #1f2833;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    width: 200px;
+}
+
+.shopping-list-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #66fcf1;
+    text-align: left;
+}
+
+.shopping-list {
+    list-style: none;
+    padding: 0;
+}
+
+.shopping-list li {
+    font-size: 1rem;
+    color: #ffffff;
+    padding: 0.25rem 0;
+    text-align: left;
+}

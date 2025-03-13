@@ -1,411 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>BIG T DOMEENID</title>
+		<link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300;400;700;800&display=swap"
+			rel="stylesheet"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BIG T DOMEENID</title>
-    <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300;400;700;800&display=swap"
-        rel="stylesheet" />
+	<body>
+		<div class="header">
+			<div class="container">
+				<div class="logo-container">
+					<img src="logo.png" alt="Big T Domeenid Logo" class="logo-image" />
+					<div class="logo">BIG T DOMEENID.ee</div>
+				</div>
+				<div class="top-nav">
+					<button class="top-item">Domeenid</button>
+					<button class="top-item">Koduleht</button>
+					<button class="top-item">E-post</button>
+					<button class="top-item">Hinnad</button>
+				</div>
+			</div>
+		</div>
 
-    <style>
-        body {
-            background-color: #0b0c10;
-            background-image: url('background1.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            font-family: "Inter", sans-serif;
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
+		<div class="main-container">
+			<div class="white-container">
+				<h1 class="first-text">Osta Domeen</h1>
+				<div class="duration-container"></div>
 
-        .header {
-            background-color: #1f2833;
-            color: #66fcf1;
-            padding: 1rem;
-        }
+				<form id="domainForm">
+					<div class="input-container-vertical">
+						<label for="firstName"></label>
+						<input
+							type="text"
+							id="firstName"
+							class="input"
+							placeholder="Eesnimi"
+							required
+						/>
+					</div>
 
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+					<div class="input-container-vertical">
+						<label for="lastName"></label>
+						<input
+							type="text"
+							id="lastName"
+							class="input"
+							placeholder="Perekonna nimi"
+							required
+						/>
+					</div>
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
+					<div class="input-container-vertical">
+						<label for="email"></label>
+						<input
+							type="email"
+							id="email"
+							class="input"
+							placeholder="your@email.com"
+							required
+						/>
+					</div>
 
-        .logo-image {
-            width: 50px;
-            height: auto;
-            margin-right: 10px;
-        }
+					<div class="input-container-vertical">
+						<label for="phoneNumber"></label>
+						<input
+							type="tel"
+							id="phoneNumber"
+							class="input"
+							placeholder="+372 555 5555"
+							required
+						/>
+					</div>
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            font-family: "Parkinsans", sans-serif;
-        }
+					<div class="input-container-vertical">
+						<label for="address"></label>
+						<input
+							type="text"
+							id="address"
+							class="input"
+							placeholder="Teie tänav, linn, riik"
+							required
+						/>
+					</div>
 
-        .top-nav {
-            display: flex;
-            justify-content: center;
-        }
+					<div class="input-container-vertical">
+						<label for="paymentMethod"></label>
+						<select id="paymentMethod" class="select" required>
+							<option value="">Vali makseviis</option>
+							<option value="creditCard">Krediitkaart</option>
+							<option value="paypal">PayPal</option>
+							<option value="bankTransfer">Pangaülekanne</option>
+						</select>
+					</div>
 
-        .top-item {
-            font-size: 1.125rem;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            margin: 0 0.25rem;
-            background-color: #45a29e;
-            border: none;
-            border-radius: 0.3125rem;
-            color: #0b0c10;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-        }
+					<div id="paymentForm">
+						<h3>Sisesta makse andmed:</h3>
+						<div class="input-container-vertical">
+							<label for="cardNumber"></label>
+							<input
+								type="text"
+								id="cardNumber"
+								class="input"
+								placeholder="Kaardi number"
+							/>
+						</div>
+						<div class="input-container-vertical">
+							<label for="expiryDate"></label>
+							<input
+								type="text"
+								id="expiryDate"
+								class="input"
+								placeholder="Aegumiskuupäev (MM/YY)"
+							/>
+						</div>
+						<div class="input-container-vertical">
+							<label for="cvv"></label>
+							<input type="text" id="cvv" class="input" placeholder="CVV" />
+						</div>
+					</div>
 
-        .top-item:hover {
-            background-color: #66fcf1;
-            color: #1f2833;
-            box-shadow: 0 0 0.625rem #66fcf1;
-        }
+					<div class="button-container">
+						<button class="button" onclick="window.location.href='page1.html'">
+							Tagasi
+						</button>
+						<button class="button" id="buyDomain" type="submit" disabled>
+							Osta Domeen
+						</button>
+					</div>
+				</form>
 
-        .main-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-        }
+				<div class="shopping-list-container">
+					<h2>Ostukorv</h2>
+					<ul class="shopping-list">
+						<li>Domeen: example.ee</li>
+						<li>Aastaid: <span id="years">1</span></li>
+						<li>Hind kokku: <span id="total">20</span>€</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
-        .white-container {
-            background-color: #1f2833;
-            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.8);
-            width: 90%;
-            max-width: 50rem;
-            padding: 1.875rem;
-            border-radius: 0.9375rem;
-        }
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
 
-        .first-text,
-        .first2-text {
-            font-weight: bold;
-            font-family: "Parkinsans", sans-serif;
-            text-align: center;
-            font-size: 4.6875rem;
-            color: #66fcf1;
-            margin-bottom: 0.5rem;
-        }
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const paymentMethodSelect = document.getElementById("paymentMethod");
+				const paymentForm = document.getElementById("paymentForm");
+				const buyDomainButton = document.getElementById("buyDomain");
+				const cardNumberField = document.getElementById("cardNumber");
+				const expiryDateField = document.getElementById("expiryDate");
+				const cvvField = document.getElementById("cvv");
+				const domainForm = document.getElementById("domainForm");
 
-        .input-container-vertical {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-top: 1.25rem;
-            width: 100%;
-        }
+				function checkFields() {
+					let allBaseFieldsFilled = true;
+					let allCreditCardFieldsFilled = true;
 
-        .input-container-vertical label {
-            font-weight: bold;
-            font-family: "Parkinsans", sans-serif;
-            font-size: 1.25rem;
-            color: #ffffff;
-            margin-bottom: 0.3125rem;
-        }
+					// Check base required fields
+					const requiredBaseFields = domainForm.querySelectorAll(
+						'input[required]:not([form="creditCardForm"]), select[required]'
+					);
+					requiredBaseFields.forEach((field) => {
+						if (!field.value) {
+							allBaseFieldsFilled = false;
+						}
+					});
 
-        .input,
-        .select {
-            padding: 0.5rem 0.75rem;
-            font-size: 1rem;
-            background-color: #0b0c10;
-            border: 0.125rem solid #45a29e;
-            border-radius: 0.3125rem;
-            color: #ffffff;
-            transition: border-color 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 0.625rem;
-        }
+					//Check credit card fields if needed
+					if (paymentMethodSelect.value === "creditCard") {
+						if (
+							!cardNumberField.value ||
+							!expiryDateField.value ||
+							!cvvField.value
+						) {
+							allCreditCardFieldsFilled = false;
+						}
+					}
 
-        .input:focus {
-            outline: none;
-            border-color: #66fcf1;
-        }
+					buyDomainButton.disabled = !(
+						allBaseFieldsFilled &&
+						(paymentMethodSelect.value !== "creditCard" ||
+							allCreditCardFieldsFilled)
+					);
+				}
 
-        .select {
-            color: #fff;
-        }
+				function togglePaymentForm() {
+					if (paymentMethodSelect.value === "creditCard") {
+						paymentForm.style.display = "block";
+						cardNumberField.required = true;
+						expiryDateField.required = true;
+						cvvField.required = true;
+					} else {
+						paymentForm.style.display = "none";
+						cardNumberField.required = false;
+						expiryDateField.required = false;
+						cvvField.required = false;
+					}
+					checkFields();
+				}
 
-        .domain-rules {
-            font-size: 0.75rem;
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 1.25rem;
-            padding: 0 1.25rem;
-        }
+				domainForm.addEventListener("input", checkFields);
+				domainForm.addEventListener("change", checkFields);
+				paymentMethodSelect.addEventListener("change", togglePaymentForm);
 
-        .button {
-            font-weight: 510;
-            font-size: 1.25rem;
-            border-radius: 0.625rem;
-            font-family: "Parkinsans", sans-serif;
-            text-align: center;
-            padding: 0.5rem 1.25rem;
-            background-color: #66fcf1;
-            color: #1f2833;
-            margin-top: 1.25rem;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-        }
+				// Submit form and redirect to page3.html on success
+				domainForm.addEventListener("submit", function (e) {
+					e.preventDefault(); // Prevent the default form submission
+					// Check if the form is valid
+					if (buyDomainButton.disabled === false) {
+						window.location.href = "page3.html"; // Redirect to page3.html
+					}
+				});
 
-        .button:hover {
-            color: #0b0c10;
-            box-shadow: 0 0 1.875rem #66fcf1;
-        }
-
-        .button:disabled {
-            background-color: #44918e;
-            color: #6b7c8a;
-            cursor: not-allowed;
-            box-shadow: none;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .additional-content {
-            background-color: #1f2833;
-            padding: 1.875rem;
-            border-radius: 0.9375rem;
-            margin-top: 1.25rem;
-            text-align: center;
-        }
-
-        .additional-content p {
-            font-size: 1rem;
-        }
-
-        #domainModal,
-        #domainModalj {
-            display: none;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-
-        #domainModal {
-            background-color: #ff0000d2;
-        }
-
-        #domainModalj {
-            background-color: #5eff00d2;
-        }
-
-        .duration-container {
-            margin-top: 1.25rem;
-            text-align: center;
-            display: none;
-        }
-
-        .duration-container select,
-        .duration-container span {
-            font-size: 1.125rem;
-            color: #ffffff;
-            margin-right: 1rem;
-        }
-
-        #paymentForm {
-            display: none;
-        }
-
-        #paymentForm h3 {
-            margin-top: 50px;
-            font-size: 2rem;
-            font-family: "Parkinsans", sans-serif;
-            font-weight: bold;
-            color: #ffffff;
-            text-align: left;
-        }
-
-        .payment-icons {
-            display: flex;
-            justify-content: flex-start;
-            margin-top: 0.625rem;
-        }
-
-        .payment-icons img {
-            width: 3rem;
-            margin-right: 0.5rem;
-            cursor: pointer;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="header">
-        <div class="container">
-            <div class="logo-container">
-                <img src="logo.png" alt="Big T Domeenid Logo" class="logo-image">
-                <div class="logo">BIG T DOMEENID.ee</div>
-            </div>
-            <div class="top-nav">
-                <button class="top-item">Domeenid</button>
-                <button class="top-item">Koduleht</button>
-                <button class="top-item">E-post</button>
-                <button class="top-item">Hinnad</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="main-container">
-        <div class="white-container">
-            <h1 class="first-text">Osta Domeen</h1>
-            <div class="duration-container">
-            </div>
-
-            <form id="domainForm">
-                <div class="input-container-vertical">
-                    <label for="firstName">Eesnimi:</label>
-                    <input type="text" id="firstName" class="input" placeholder="Eesnimi" required />
-                </div>
-
-                <div class="input-container-vertical">
-                    <label for="lastName">Perekonna nimi:</label>
-                    <input type="text" id="lastName" class="input" placeholder="Perekonna nimi" required />
-                </div>
-
-                <div class="input-container-vertical">
-                    <label for="email">E-post:</label>
-                    <input type="email" id="email" class="input" placeholder="your@email.com" required />
-                </div>
-
-                <div class="input-container-vertical">
-                    <label for="phoneNumber">Telefoninumber:</label>
-                    <input type="tel" id="phoneNumber" class="input" placeholder="+372 555 5555" required />
-                </div>
-
-                <div class="input-container-vertical">
-                    <label for="address">Aadress:</label>
-                    <input type="text" id="address" class="input" placeholder="Teie tänav, linn, riik" required />
-                </div>
-
-                <div class="input-container-vertical">
-                    <label for="paymentMethod">Makseviis:</label>
-                    <select id="paymentMethod" class="select" required>
-                        <option value="">Vali makseviis</option>
-                        <option value="creditCard">Krediitkaart</option>
-                        <option value="paypal">PayPal</option>
-                        <option value="bankTransfer">Pangaülekanne</option>
-                    </select>
-                </div>
-
-                <div id="paymentForm">
-                    <h3>Sisesta makse andmed:</h3>
-                    <div class="input-container-vertical">
-                        <label for="cardNumber">Kaardi number:</label>
-                        <input type="text" id="cardNumber" class="input" placeholder="xxxx-xxxx-xxxx-xxxx" />
-                    </div>
-                    <div class="input-container-vertical">
-                        <label for="expiryDate">Aegumiskuupäev (MM/YY):</label>
-                        <input type="text" id="expiryDate" class="input" placeholder="MM/YY" />
-                    </div>
-                    <div class="input-container-vertical">
-                        <label for="cvv">CVV:</label>
-                        <input type="text" id="cvv" class="input" placeholder="123" />
-                    </div>
-                </div>
-
-                <div class="button-container">
-                    <button class="button" onclick="window.location.href='page1.html'">Tagasi</button>
-                    <button class="button" id="buyDomain" type="submit" disabled>Osta Domeen</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const paymentMethodSelect = document.getElementById("paymentMethod");
-            const paymentForm = document.getElementById("paymentForm");
-            const buyDomainButton = document.getElementById("buyDomain");
-            const cardNumberField = document.getElementById("cardNumber");
-            const expiryDateField = document.getElementById("expiryDate");
-            const cvvField = document.getElementById("cvv");
-            const domainForm = document.getElementById("domainForm");
-
-            function checkFields() {
-                let allBaseFieldsFilled = true;
-                let allCreditCardFieldsFilled = true;
-
-                // Check base required fields
-                const requiredBaseFields = domainForm.querySelectorAll('input[required]:not([form="creditCardForm"]), select[required]');
-                requiredBaseFields.forEach(field => {
-                    if (!field.value) {
-                        allBaseFieldsFilled = false;
-                    }
-                });
-
-                //Check credit card fields if needed
-                if (paymentMethodSelect.value === "creditCard") {
-                    if (!cardNumberField.value || !expiryDateField.value || !cvvField.value) {
-                        allCreditCardFieldsFilled = false;
-                    }
-                }
-
-                buyDomainButton.disabled = !(allBaseFieldsFilled && (paymentMethodSelect.value !== "creditCard" || allCreditCardFieldsFilled));
-            }
-
-            function togglePaymentForm() {
-                if (paymentMethodSelect.value === "creditCard") {
-                    paymentForm.style.display = "block";
-                    cardNumberField.required = true;
-                    expiryDateField.required = true;
-                    cvvField.required = true;
-                } else {
-                    paymentForm.style.display = "none";
-                    cardNumberField.required = false;
-                    expiryDateField.required = false;
-                    cvvField.required = false;
-                }
-                checkFields();
-            }
-
-            domainForm.addEventListener('input', checkFields);
-            domainForm.addEventListener('change', checkFields);
-            paymentMethodSelect.addEventListener("change", togglePaymentForm);
-
-            // Submit form and redirect to page3.html on success
-            domainForm.addEventListener("submit", function (e) {
-                e.preventDefault(); // Prevent the default form submission
-                // Check if the form is valid
-                if (buyDomainButton.disabled === false) {
-                    window.location.href = "page3.html"; // Redirect to page3.html
-                }
-            });
-
-            togglePaymentForm();
-            checkFields();
-        });
-    </script>
-</body>
-
+				togglePaymentForm();
+				checkFields();
+			});
+		</script>
+	</body>
 </html>
