@@ -10,18 +10,24 @@ body {
     display: flex;
     flex-direction: column;
     background-attachment: fixed;
+    position: relative;
 }
 
 .header {
     background-color: #1f2833;
     color: #66fcf1;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Added for absolute positioning of the step indicator */
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 70%;
 }
 
 .logo-container {
@@ -75,13 +81,14 @@ body {
 
 .white-container {
     background-color: #1f2833;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Soften the shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     width: 90%;
     max-width: 50rem;
-    padding: 2.5rem; /* Add more padding */
+    padding: 2.5rem;
     border-radius: 0.9375rem;
     transition: box-shadow 0.3s ease;
-    position: relative; /* Add this */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .white-container.available {
@@ -112,7 +119,7 @@ body {
 
 .input-container {
     display: flex;
-    align-items: center; /* keep this to vertically align items in the container */
+    align-items: center;
     justify-content: center;
     margin-top: 1.25rem;
 }
@@ -123,17 +130,16 @@ body {
     font-size: 1.25rem;
     color: #c5c6c7;
     margin-right: 0.5rem;
-    margin-bottom: -0.75rem; /* Example: adjust this value slightly */
+    margin-bottom: -0.75rem;
 }
-
 
 .input,
 .select {
-  padding: 0.75rem 1rem; /* Adjust padding for a larger feel */
+  padding: 0.75rem 1rem;
   font-size: 1rem;
   background-color: #0b0c10;
   border: 0.125rem solid #45a29e;
-  border-radius: 0.5rem; /* Round the corners more */
+  border-radius: 0.5rem;
   color: #ffffff;
   transition: border-color 0.3s ease;
   margin-top: 1rem;
@@ -178,8 +184,8 @@ body {
 
 .button:hover {
     color: #0b0c10;
-    box-shadow: 0 0 1rem #66fcf1; /* Soften the glow */
-  }
+    box-shadow: 0 0 1rem #66fcf1;
+}
 
 .button:disabled {
     background-color: #44918e;
@@ -239,7 +245,7 @@ body {
 
 #paymentForm {
   display: none;
-  margin-top: 0rem; /* Adjusted margin-top */
+  margin-top: 0rem;
   padding: 1.5rem;
 }
 
@@ -250,11 +256,11 @@ body {
 }
 
 #paymentForm .payment-form-title {
-    margin-top: 20px; /* Adjusted margin-top */
+    margin-top: 20px;
     font-size: 2rem;
     font-family: "Parkinsans", sans-serif;
     font-weight: bold;
-    color: #66fcf1; /* Making the title blue */
+    color: #66fcf1;
     text-align: left;
 }
 
@@ -277,17 +283,16 @@ body {
 .shopping-list-container {
     position:absolute;
     background-color: #1f2833;
-    padding: 1.2rem; /* Slightly bigger padding */
-    border-radius: 0.6rem; /* Slightly bigger border-radius */
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4); /* Adjusted shadow */
-    width: 250px; /* Increased width */
-    border: 1px solid #45a29e; /* Added border */
+    padding: 1.2rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    width: 250px;
+    border: 1px solid #45a29e;
     margin-left: 400px;
 }
 
 .shopping-list-container h2 {
-    font-size: 1.7rem; /* Slightly bigger font-size */
-    margin-bottom: 0.6rem; /* Slightly bigger margin-bottom */
+    font-size: 1.7rem;
     color: #66fcf1;
     text-align: left;
 }
@@ -298,14 +303,47 @@ body {
 }
 
 .shopping-list li {
-    font-size: 1.1rem; /* Slightly bigger font-size */
+    font-size: 1.1rem;
     color: #ffffff;
-    padding: 0.3rem 0; /* Slightly bigger padding */
+    padding: 0.3rem 0;
     text-align: left;
 }
 
 .shopping-list .separator {
-    border-bottom: 1px solid #45a29e; /* Line separator */
-    margin: 0.5rem 0; /* Add some margin to the separator */
+    border-bottom: 1px solid #45a29e;
+    margin: 0.5rem 0;
     padding: 0;
+}
+
+/* Step Indicator Styles */
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center the steps */
+    position: absolute; /* Absolute positioning */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for the element's width */
+    top: 0; /* Align to the top of the header */
+    bottom: 0; /* Stretch to fill the header height */
+}
+
+.step {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #45a29e;
+    color: #0b0c10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step.active {
+    background-color: #66fcf1;
+    color: #1f2833;
+    box-shadow: 0 0 0.5rem #66fcf1;
 }
