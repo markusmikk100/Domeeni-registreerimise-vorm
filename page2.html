@@ -185,7 +185,6 @@
 					let allBaseFieldsFilled = true;
 					let allCreditCardFieldsFilled = true;
 
-					// Check base required fields
 					const requiredBaseFields = domainForm.querySelectorAll(
 						'input[required]:not([form="creditCardForm"]), select[required]'
 					);
@@ -195,7 +194,6 @@
 						}
 					});
 
-					//Check credit card fields if needed
 					if (paymentMethodSelect.value === "creditCard") {
 						if (
 							!cardNumberField.value ||
@@ -232,12 +230,10 @@
 				domainForm.addEventListener("change", checkFields);
 				paymentMethodSelect.addEventListener("change", togglePaymentForm);
 
-				// Submit form and redirect to page3.html on success
 				domainForm.addEventListener("submit", function (e) {
-					e.preventDefault(); // Prevent the default form submission
-					// Check if the form is valid
+					e.preventDefault();
 					if (buyDomainButton.disabled === false) {
-						window.location.href = "page3.html"; // Redirect to page3.html
+						window.location.href = "page3.html";
 					}
 				});
 
