@@ -37,7 +37,20 @@
 
 		<div class="main-container">
 			<div class="white-container">
-				<h1 class="first-text">Osta Domeen</h1>
+				<div class="title-container">
+					<h1 class="first-text">Osta Domeen</h1>
+				</div>
+
+				<div class="shopping-list-container">
+					<h2>Ostukorv</h2>
+					<ul class="shopping-list">
+						<li>Domeen: example.ee</li>
+						<li>Aastaid: <span id="years">2</span></li>
+						<li class="separator"></li>
+						<li>Hind kokku: <span id="total">19</span> € + km</li>
+					</ul>
+				</div>
+
 				<div class="duration-container"></div>
 
 				<form id="domainForm">
@@ -107,7 +120,10 @@
 					</div>
 
 					<div id="paymentForm">
-						<h3>Sisesta makse andmed:</h3>
+						<div class="payment-form-header">
+							<h3 class="payment-form-title">Sisesta makse andmed</h3>
+						</div>
+
 						<div class="input-container-vertical">
 							<label for="cardNumber"></label>
 							<input
@@ -141,15 +157,6 @@
 						</button>
 					</div>
 				</form>
-
-				<div class="shopping-list-container">
-					<h2>Ostukorv</h2>
-					<ul class="shopping-list">
-						<li>Domeen: example.ee</li>
-						<li>Aastaid: <span id="years">1</span></li>
-						<li>Hind kokku: <span id="total">20</span>€</li>
-					</ul>
-				</div>
 			</div>
 		</div>
 

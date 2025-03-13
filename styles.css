@@ -9,6 +9,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    background-attachment: fixed;
 }
 
 .header {
@@ -81,7 +82,7 @@ body {
     border-radius: 0.9375rem;
     transition: box-shadow 0.3s ease;
     position: relative; /* Add this */
-  }
+}
 
 .white-container.available {
     box-shadow: 0 0 1.25rem 1rem #5eff00b0;
@@ -91,6 +92,12 @@ body {
 .white-container.unavailable {
     box-shadow: 0 0 1.25rem 1rem #ff0000a8;
     /* Red glow */
+}
+
+.title-container {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #45a29e;
 }
 
 .first-text,
@@ -105,7 +112,7 @@ body {
 
 .input-container {
     display: flex;
-    align-items: center;
+    align-items: center; /* keep this to vertically align items in the container */
     justify-content: center;
     margin-top: 1.25rem;
 }
@@ -115,8 +122,10 @@ body {
     font-family: "Parkinsans", sans-serif;
     font-size: 1.25rem;
     color: #c5c6c7;
-    margin-right: 0.625rem;
+    margin-right: 0.5rem;
+    margin-bottom: -0.75rem; /* Example: adjust this value slightly */
 }
+
 
 .input,
 .select {
@@ -230,18 +239,22 @@ body {
 
 #paymentForm {
   display: none;
-  margin-top: 2rem;
+  margin-top: 0rem; /* Adjusted margin-top */
   padding: 1.5rem;
-  border: 1px solid #45a29e;
-  border-radius: 0.5rem;
 }
 
-#paymentForm h3 {
-    margin-top: 50px;
+.payment-form-header {
+    border-bottom: 1px solid #45a29e;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+#paymentForm .payment-form-title {
+    margin-top: 20px; /* Adjusted margin-top */
     font-size: 2rem;
     font-family: "Parkinsans", sans-serif;
     font-weight: bold;
-    color: #ffffff;
+    color: #66fcf1; /* Making the title blue */
     text-align: left;
 }
 
@@ -261,20 +274,20 @@ body {
     text-decoration: none;
   }
 
-  .shopping-list-container {
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
+.shopping-list-container {
+    position:absolute;
     background-color: #1f2833;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    width: 200px;
+    padding: 1.2rem; /* Slightly bigger padding */
+    border-radius: 0.6rem; /* Slightly bigger border-radius */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4); /* Adjusted shadow */
+    width: 250px; /* Increased width */
+    border: 1px solid #45a29e; /* Added border */
+    margin-left: 400px;
 }
 
 .shopping-list-container h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.7rem; /* Slightly bigger font-size */
+    margin-bottom: 0.6rem; /* Slightly bigger margin-bottom */
     color: #66fcf1;
     text-align: left;
 }
@@ -285,8 +298,14 @@ body {
 }
 
 .shopping-list li {
-    font-size: 1rem;
+    font-size: 1.1rem; /* Slightly bigger font-size */
     color: #ffffff;
-    padding: 0.25rem 0;
+    padding: 0.3rem 0; /* Slightly bigger padding */
     text-align: left;
+}
+
+.shopping-list .separator {
+    border-bottom: 1px solid #45a29e; /* Line separator */
+    margin: 0.5rem 0; /* Add some margin to the separator */
+    padding: 0;
 }
